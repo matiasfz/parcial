@@ -6,11 +6,11 @@ spring:
     gateway:
       routes:
         - id: movieRoute 
-          uri: lb://movie-service 
+          uri: http://localhost:8082/
           predicates:
             - Path=/movies/**
         - id: catalogRoute 
-          uri: lb://catalog-service
+          uri: http://localhost:8084/
           predicates: 
             - Path=/catalogs/**
 eureka:
